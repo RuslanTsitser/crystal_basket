@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:crystal_basket/telegram_integration/telegram_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -235,6 +236,11 @@ class _GameScreenState extends State<GameScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    /// Интеграция с телеграм. Можно пока не обращать внимание
+                    Text(
+                      'Username: ${getUsername() ?? 'User'}',
+                      style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    ),
                     Text('Score: $score', style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
                     Text('Speed: ${fallSpeed.toStringAsFixed(1)}', style: const TextStyle(fontSize: 18)),
                     Text(
